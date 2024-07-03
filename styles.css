@@ -1,0 +1,233 @@
+:root {
+    --color-btn: #0A3871; /* Color azul para los botones */
+    --color-btn-text: #0A3871; /* Color de texto para los botones */
+    --color-background: #E0EEF5; /* Color de fondo más azul claro */
+    --color-copy-msg: #2ECC71; /* Color verde para el mensaje de copiado */
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--color-background);
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+/* Container Principal */
+.container {
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Encabezado con Logo */
+.header {
+    background-color: transparent; /* Fondo transparente */
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo img {
+    height: 40px;
+}
+
+/* Sección de Encriptar y Desencriptar */
+.process-section {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px; /* Espacio inferior */
+}
+
+.input-section {
+    background-color: transparent; /* Fondo transparente */
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: none;
+}
+
+.input-section textarea {
+    width: 100%;
+    padding: 10px;
+    border: none; /* Sin bordes */
+    border-radius: 4px;
+    resize: vertical;
+    box-sizing: border-box;
+    font-size: 16px;
+    height: 150px;
+    overflow-y: hidden; /* Ocultar barra de desplazamiento */
+    background-color: transparent; /* Fondo transparente */
+    color: var(--color-btn-text);
+}
+
+.input-section textarea::placeholder {
+    color: var(--color-btn-text); /* Color del placeholder */
+}
+
+.info-message {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    margin-bottom: 10px;
+    color: #666;
+}
+
+.info-message ion-icon {
+    margin-right: 5px; /* Espacio a la derecha del ícono */
+}
+
+/* Sección de Botones */
+.button-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px; /* Aumento del margen superior */
+}
+
+.button-section button {
+    flex: 1;
+    width: 100%;
+    background-color: var(--color-btn);
+    color: white;
+    border: 2px solid var(--color-btn); /* Borde sólido */
+    padding: 16px 20px; /* Aumento del padding */
+    border-radius: 20px;
+    cursor: pointer;
+    margin: 10px 0; /* Aumento del margen */
+}
+
+.button-section button.transparent {
+    background-color: transparent;
+    color: var(--color-btn);
+    border: 2px solid var(--color-btn);
+    padding: 16px 20px; /* Aumento del padding */
+}
+
+.button-section button.transparent:hover {
+    background-color: var(--color-btn);
+    color: white;
+}
+
+/* Sección de Resultado */
+.output-section {
+    background-color: #fff; /* Fondo blanco */
+    border-radius: 20px; /* Más redondeado */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra */
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Alinear elementos con espacio entre ellos */
+    height: 100%; /* Ajustar altura para ocupar todo el espacio disponible */
+}
+
+
+.output-background {
+    background-color: #fff;
+    border-radius: 20px; /* Más redondeado */
+    padding: 20px;
+    height: 150px;
+
+    overflow: hidden;
+}
+
+.output-text {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    max-height: 200px;
+    overflow-y: scroll;
+    box-sizing: border-box;
+}
+
+.no-message {
+    text-align: center; /* Centrar texto */
+    margin-bottom: 20px; /* Margen inferior */
+}
+
+.no-message p {
+    font-size: 18px; /* Tamaño de fuente */
+    font-weight: bold; /* Negrita */
+}
+
+/* Sección de Copiar Texto */
+.result-actions {
+    margin-top: auto; /* Empujar hacia abajo desde la parte superior */
+}
+.copy-section {
+    display: none; /* Oculto por defecto */
+    margin-top: 20px; /* Aumento del margen superior */
+}
+
+.copy-section button.transparent {
+    background-color: transparent;
+    color: var(--color-btn); /* Color azul */
+    border: 2px solid var(--color-btn);
+    padding: 16px 20px; /* Aumento del padding */
+    border-radius: 20px;
+    cursor: pointer;
+    width: 100%;
+}
+
+.copy-section button.transparent:hover {
+    background-color: var(--color-btn);
+    color: white;
+}
+
+/* Mensaje de Estado */
+.status-message {
+    margin-top: 10px;
+    color: var(--color-btn);
+    text-align: center;
+}
+
+/* Mensaje de Copiado */
+.copy-message {
+    display: none;
+    color: var(--color-copy-msg); /* Color verde */
+    text-align: center;
+    margin-top: 10px;
+}
+
+
+@media (min-width: 480px) {
+    .button-section {
+        flex-direction: row; /* Alinear botones en fila en pantallas medianas */
+        justify-content: space-around; /* Espacio entre los botones */
+        align-items: center;
+    }
+
+    .button-section button {
+        flex: 1; /* Ocupar espacio disponible */
+        margin: 0 10px; /* Espacio entre los botones */
+    }
+}
+
+/* A partir de 676px */
+@media (min-width: 676px) {
+    .sections-container {
+        display: flex;
+        flex-direction: row; /* Cambio a fila para pantallas más grandes */
+        justify-content: space-between; /* Espacio entre secciones */
+    }
+
+    .process-section,
+    .output-section {
+        flex: 1; /* Ocupar espacio disponible */
+        max-width: 48%; /* Ancho máximo para cada sección */
+    }
+}
+
+/* A partir de 1024px */
+/* A partir de 1024px */
+@media (min-width: 1024px) {
+    .sections-container {
+        width: 100%;
+        max-width: 1200px; /* Ancho máximo del contenedor de secciones */
+        margin: auto; /* Centrar horizontalmente el contenedor en la página */
+        padding: 20px; /* Añadir padding a los lados para evitar que el contenido toque los bordes */
+        position: absolute; /* Posición absoluta para centrar verticalmente */
+        top: 50%; /* Mover el contenedor hacia abajo un 50% de la altura del viewport */
+        left: 50%; /* Mover el contenedor hacia la derecha un 50% del ancho del viewport */
+        transform: translate(-50%, -50%); /* Centrar completamente el contenedor */
+    }
+}

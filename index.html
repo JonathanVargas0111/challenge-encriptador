@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encriptar y Desencriptar</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <!-- Logo -->
+        <div class="header">
+            <div class="logo">
+                <img src="public/logo.png" alt="Logo">
+            </div>
+        </div>
+
+        <!-- Contenedor principal de secciones -->
+        <div class="sections-container">
+            <!-- Sección de Encriptar y Desencriptar -->
+            <div class="process-section">
+                <!-- Ingresa el texto -->
+                <div class="input-section">
+                    <textarea id="inputTexto" placeholder="Ingrese el texto aquí"></textarea>
+                </div>
+                <div class="info-message">
+                    <ion-icon name="alert-circle-outline"></ion-icon>
+                    <span>Solo letras minúsculas y sin acentos</span>
+                </div>
+                <div class="button-section">
+                    <button id="btnEncriptar" onclick="procesarTexto('encriptar')">Encriptar</button>
+                    <button id="btnDesencriptar" class="transparent" onclick="procesarTexto('desencriptar')">Desencriptar</button>
+                </div>
+            </div>
+
+            <!-- Sección resultado -->
+            <div class="output-section">
+                <div id="output-background" class="output-background">
+                    <div id="outputTexto" class="output-text"></div>
+                    <div id="noMessage" class="no-message">
+                        <p>Ningún mensaje fue encontrado</p>
+                        <p>Ingresa el texto que desees encriptar o desencriptar.</p>
+                    </div>
+                </div>
+                <div class="result-actions">
+                    <div class="copy-section">
+                        <button id="btnCopiar" class="transparent" onclick="copiarTexto()">Copiar</button>
+                    </div>
+                    <div class="status-message">
+                        <span id="statusMessage"></span>
+                    </div>
+                    <div class="copy-message" id="copyMessage">Texto copiado</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
